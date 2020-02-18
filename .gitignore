@@ -1,4 +1,5 @@
 lib/utilities/keys.dart
+/ios/
 
 # Miscellaneous
 *.class
