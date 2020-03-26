@@ -21,13 +21,10 @@ class _ChannelScreenState extends State<ChannelScreen> {
 
   _buildProfileInfo() {
     return Container(
-      margin: EdgeInsets.all(20.0),
       padding: EdgeInsets.all(20.0),
       height: 120.0,
       decoration: BoxDecoration(
-        border: Border.symmetric(
-          vertical: BorderSide(color: Colors.black12),
-        ),
+        color: Theme.of(context).primaryColor,
       ),
       child: Row(
         children: <Widget>[
@@ -45,16 +42,16 @@ class _ChannelScreenState extends State<ChannelScreen> {
                 Text(
                   channel.title,
                   style: TextStyle(
-                    color: Colors.black,
+                    color: Colors.white,
                     fontSize: 20.0,
-                    fontWeight: FontWeight.w600,
+                    fontWeight: FontWeight.bold,
                   ),
                   overflow: TextOverflow.ellipsis,
                 ),
                 Text(
                   '${channel.subscriberCount} subscribers',
                   style: TextStyle(
-                    color: Colors.grey[600],
+                    color: Colors.white,
                     fontSize: 16.0,
                     fontWeight: FontWeight.w600,
                   ),
@@ -79,7 +76,7 @@ class _ChannelScreenState extends State<ChannelScreen> {
       child: Container(
         margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 5.0),
         padding: EdgeInsets.all(10.0),
-        height: 140.0,
+        height: 250.0,
         decoration: BoxDecoration(
           color: Colors.white,
           boxShadow: [
@@ -90,13 +87,16 @@ class _ChannelScreenState extends State<ChannelScreen> {
             ),
           ],
         ),
-        child: Row(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Image(
-              width: 150.0,
+              width: double.infinity,
+              height: 200.0,
               image: NetworkImage(video.thumbnailUrl),
+              fit: BoxFit.fitWidth,
             ),
-            SizedBox(width: 10.0),
+            SizedBox(height: 10.0),
             Expanded(
               child: Text(
                 video.title,
