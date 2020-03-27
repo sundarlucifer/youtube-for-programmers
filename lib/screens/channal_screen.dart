@@ -75,7 +75,6 @@ class _ChannelScreenState extends State<ChannelScreen> {
       ),
       child: Container(
         margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 5.0),
-        padding: EdgeInsets.all(10.0),
         height: 250.0,
         decoration: BoxDecoration(
           color: Colors.white,
@@ -98,11 +97,14 @@ class _ChannelScreenState extends State<ChannelScreen> {
             ),
             SizedBox(height: 10.0),
             Expanded(
-              child: Text(
-                video.title,
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 18.0,
+              child: Padding(
+                padding: EdgeInsets.all(10.0),
+                child: Text(
+                  video.title,
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 18.0,
+                  ),
                 ),
               ),
             ),
